@@ -5,3 +5,72 @@ output: html_notebook
 
 # Lab 5
 
+## Problem 0 
+
+https://github.com/peterciliberto/Lab5.git
+
+## Problem 1
+```{r}
+x <- c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+x.ascending <- sort(x, decreasing = FALSE)
+Q1 <- quantile(x, .25)
+Q3 <- quantile(x, .75)
+IQR <- Q3-Q1
+```
+
+The first quartile is -4.53, the third quartile is 4.9, the interquartile range is 9.43.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
