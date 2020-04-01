@@ -20,10 +20,55 @@ IQR <- Q3-Q1
 
 The first quartile is -4.53, the third quartile is 4.9, the interquartile range is 9.43.
 
+## Problem 2 
 
+```{r}
+#' This function calculates the first quartile, third quartile, and interquartile range of a give vector
+#' @param v The data we wish to calculate the quartiles and interquartile range of 
+#' @returns A vector containing the first quartile, third quartile, and interquartile range respectively. 
+quartiles <- function(v){
+  v <- numeric(length = 3)
+  Q1 <- quantile(x, 0.25)
+  Q3 <- quantile(x, 0.75)
+  IQR <- Q3-Q1
+  v <- c(Q1, Q3, IQR)
+  return(v)
+}
+quartiles(x)
+```
 
+## Problem 3
 
+```{r}
+Q1 - (1.5 * IQR)
+Q3 + (1.5 * IQR)
+```
 
+There is one outlier in x. This point is 28.7
+
+## Problem 4 
+
+```{r}
+#' This function takes a given vector and checks it to see if there are any outliers in the vector
+#' @param v is the vector of numbers to run through the function
+#' @returns a boolean vector that tells us if the values in the vector are outliers or not 
+
+tukey.outlier <- function(v){
+  outlier <- vector(length = length(v))
+  for(i in 1:length(v)){
+    if(v[i] < Q1-1.5*IQR | v[i] > Q3+1.5*IQR){
+      outlier[i] <- TRUE
+    }else{
+      outlier[i] <- FALSE
+    }
+  }
+  return(outlier)
+}
+x
+tukey.outlier(x)
+```
+
+## Problem 5 
 
 
 

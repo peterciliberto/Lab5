@@ -1769,11 +1769,95 @@ IQR &lt;- Q3-Q1</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>The first quartile is -4.53, the third quartile is 4.9, the interquartile range is 9.43.</p>
+</div>
+<div id="problem-2" class="section level2">
+<h2>Problem 2</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIycgVGhpcyBmdW5jdGlvbiBjYWxjdWxhdGVzIHRoZSBmaXJzdCBxdWFydGlsZSwgdGhpcmQgcXVhcnRpbGUsIGFuZCBpbnRlcnF1YXJ0aWxlIHJhbmdlIG9mIGEgZ2l2ZSB2ZWN0b3JcbiMnIEBwYXJhbSB2IFRoZSBkYXRhIHdlIHdpc2ggdG8gY2FsY3VsYXRlIHRoZSBxdWFydGlsZXMgYW5kIGludGVycXVhcnRpbGUgcmFuZ2Ugb2YgXG4jJyBAcmV0dXJucyBBIHZlY3RvciBjb250YWluaW5nIHRoZSBmaXJzdCBxdWFydGlsZSwgdGhpcmQgcXVhcnRpbGUsIGFuZCBpbnRlcnF1YXJ0aWxlIHJhbmdlIHJlc3BlY3RpdmVseS4gXG5xdWFydGlsZXMgPC0gZnVuY3Rpb24odil7XG4gIHYgPC0gbnVtZXJpYyhsZW5ndGggPSAzKVxuICBRMSA8LSBxdWFudGlsZSh4LCAwLjI1KVxuICBRMyA8LSBxdWFudGlsZSh4LCAwLjc1KVxuICBJUVIgPC0gUTMtUTFcbiAgdiA8LSBjKFExLCBRMywgSVFSKVxuICByZXR1cm4odilcbn1cbnF1YXJ0aWxlcyh4KVxuYGBgIn0= -->
+<pre class="r"><code>#' This function calculates the first quartile, third quartile, and interquartile range of a give vector
+#' @param v The data we wish to calculate the quartiles and interquartile range of 
+#' @returns A vector containing the first quartile, third quartile, and interquartile range respectively. 
+quartiles &lt;- function(v){
+  v &lt;- numeric(length = 3)
+  Q1 &lt;- quantile(x, 0.25)
+  Q3 &lt;- quantile(x, 0.75)
+  IQR &lt;- Q3-Q1
+  v &lt;- c(Q1, Q3, IQR)
+  return(v)
+}
+quartiles(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgMjUlICAgIDc1JSAgICA3NSUgXG4tNC41MjUgIDQuOTAwICA5LjQyNSBcbiJ9 -->
+<pre><code>   25%    75%    75% 
+-4.525  4.900  9.425 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="problem-3" class="section level2">
+<h2>Problem 3</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuUTEgLSAoMS41ICogSVFSKVxuYGBgIn0= -->
+<pre class="r"><code>Q1 - (1.5 * IQR)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAyNSUgXG4tMTguNjYyNSBcbiJ9 -->
+<pre><code>     25% 
+-18.6625 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuUTMgKyAoMS41ICogSVFSKVxuYGBgIn0= -->
+<pre class="r"><code>Q3 + (1.5 * IQR)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgIDc1JSBcbjE5LjAzNzUgXG4ifQ== -->
+<pre><code>    75% 
+19.0375 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>There is one outlier in x. This point is 28.7</p>
+</div>
+<div id="problem-4" class="section level2">
+<h2>Problem 4</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIycgVGhpcyBmdW5jdGlvbiB0YWtlcyBhIGdpdmVuIHZlY3RvciBhbmQgY2hlY2tzIGl0IHRvIHNlZSBpZiB0aGVyZSBhcmUgYW55IG91dGxpZXJzIGluIHRoZSB2ZWN0b3JcbiMnIEBwYXJhbSB2IGlzIHRoZSB2ZWN0b3Igb2YgbnVtYmVycyB0byBydW4gdGhyb3VnaCB0aGUgZnVuY3Rpb25cbiMnIEByZXR1cm5zIGEgYm9vbGVhbiB2ZWN0b3IgdGhhdCB0ZWxscyB1cyBpZiB0aGUgdmFsdWVzIGluIHRoZSB2ZWN0b3IgYXJlIG91dGxpZXJzIG9yIG5vdCBcblxudHVrZXkub3V0bGllciA8LSBmdW5jdGlvbih2KXtcbiAgb3V0bGllciA8LSB2ZWN0b3IobGVuZ3RoID0gbGVuZ3RoKHYpKVxuICBmb3IoaSBpbiAxOmxlbmd0aCh2KSl7XG4gICAgaWYodltpXSA8IFExLTEuNSpJUVIgfCB2W2ldID4gUTMrMS41KklRUil7XG4gICAgICBvdXRsaWVyW2ldIDwtIFRSVUVcbiAgICB9ZWxzZXtcbiAgICAgIG91dGxpZXJbaV0gPC0gRkFMU0VcbiAgICB9XG4gIH1cbiAgcmV0dXJuKG91dGxpZXIpXG59XG54XG5gYGAifQ== -->
+<pre class="r"><code>#' This function takes a given vector and checks it to see if there are any outliers in the vector
+#' @param v is the vector of numbers to run through the function
+#' @returns a boolean vector that tells us if the values in the vector are outliers or not 
+
+tukey.outlier &lt;- function(v){
+  outlier &lt;- vector(length = length(v))
+  for(i in 1:length(v)){
+    if(v[i] &lt; Q1-1.5*IQR | v[i] &gt; Q3+1.5*IQR){
+      outlier[i] &lt;- TRUE
+    }else{
+      outlier[i] &lt;- FALSE
+    }
+  }
+  return(outlier)
+}
+x</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMi4yICA3LjggLTQuNCAgMC4wIC0xLjIgIDMuOSAgNC45IC01LjcgLTcuOSAtNC45IDI4LjcgIDQuOVxuIn0= -->
+<pre><code> [1]  2.2  7.8 -4.4  0.0 -1.2  3.9  4.9 -5.7 -7.9 -4.9 28.7  4.9</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHVrZXkub3V0bGllcih4KVxuYGBgIn0= -->
+<pre class="r"><code>tukey.outlier(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRVxuIn0= -->
+<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="problem-5" class="section level2">
+<h2>Problem 5</h2>
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBMYWIgNQoKIyMgUHJvYmxlbSAwIAoKaHR0cHM6Ly9naXRodWIuY29tL3BldGVyY2lsaWJlcnRvL0xhYjUuZ2l0CgojIyBQcm9ibGVtIDEKYGBge3J9CnggPC0gYygyLjIsIDcuOCwgLTQuNCwgMC4wLCAtMS4yLCAzLjksIDQuOSwgLTUuNywgLTcuOSwgLTQuOSwgMjguNywgNC45KQp4LmFzY2VuZGluZyA8LSBzb3J0KHgsIGRlY3JlYXNpbmcgPSBGQUxTRSkKUTEgPC0gcXVhbnRpbGUoeCwgLjI1KQpRMyA8LSBxdWFudGlsZSh4LCAuNzUpCklRUiA8LSBRMy1RMQpgYGAKClRoZSBmaXJzdCBxdWFydGlsZSBpcyAtNC41MywgdGhlIHRoaXJkIHF1YXJ0aWxlIGlzIDQuOSwgdGhlIGludGVycXVhcnRpbGUgcmFuZ2UgaXMgOS40My4KCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBMYWIgNQoKIyMgUHJvYmxlbSAwIAoKaHR0cHM6Ly9naXRodWIuY29tL3BldGVyY2lsaWJlcnRvL0xhYjUuZ2l0CgojIyBQcm9ibGVtIDEKYGBge3J9CnggPC0gYygyLjIsIDcuOCwgLTQuNCwgMC4wLCAtMS4yLCAzLjksIDQuOSwgLTUuNywgLTcuOSwgLTQuOSwgMjguNywgNC45KQp4LmFzY2VuZGluZyA8LSBzb3J0KHgsIGRlY3JlYXNpbmcgPSBGQUxTRSkKUTEgPC0gcXVhbnRpbGUoeCwgLjI1KQpRMyA8LSBxdWFudGlsZSh4LCAuNzUpCklRUiA8LSBRMy1RMQpgYGAKClRoZSBmaXJzdCBxdWFydGlsZSBpcyAtNC41MywgdGhlIHRoaXJkIHF1YXJ0aWxlIGlzIDQuOSwgdGhlIGludGVycXVhcnRpbGUgcmFuZ2UgaXMgOS40My4KCiMjIFByb2JsZW0gMiAKCmBgYHtyfQojJyBUaGlzIGZ1bmN0aW9uIGNhbGN1bGF0ZXMgdGhlIGZpcnN0IHF1YXJ0aWxlLCB0aGlyZCBxdWFydGlsZSwgYW5kIGludGVycXVhcnRpbGUgcmFuZ2Ugb2YgYSBnaXZlIHZlY3RvcgojJyBAcGFyYW0gdiBUaGUgZGF0YSB3ZSB3aXNoIHRvIGNhbGN1bGF0ZSB0aGUgcXVhcnRpbGVzIGFuZCBpbnRlcnF1YXJ0aWxlIHJhbmdlIG9mIAojJyBAcmV0dXJucyBBIHZlY3RvciBjb250YWluaW5nIHRoZSBmaXJzdCBxdWFydGlsZSwgdGhpcmQgcXVhcnRpbGUsIGFuZCBpbnRlcnF1YXJ0aWxlIHJhbmdlIHJlc3BlY3RpdmVseS4gCnF1YXJ0aWxlcyA8LSBmdW5jdGlvbih2KXsKICB2IDwtIG51bWVyaWMobGVuZ3RoID0gMykKICBRMSA8LSBxdWFudGlsZSh4LCAwLjI1KQogIFEzIDwtIHF1YW50aWxlKHgsIDAuNzUpCiAgSVFSIDwtIFEzLVExCiAgdiA8LSBjKFExLCBRMywgSVFSKQogIHJldHVybih2KQp9CnF1YXJ0aWxlcyh4KQpgYGAKCiMjIFByb2JsZW0gMwoKYGBge3J9ClExIC0gKDEuNSAqIElRUikKUTMgKyAoMS41ICogSVFSKQpgYGAKClRoZXJlIGlzIG9uZSBvdXRsaWVyIGluIHguIFRoaXMgcG9pbnQgaXMgMjguNwoKIyMgUHJvYmxlbSA0IAoKYGBge3J9CiMnIFRoaXMgZnVuY3Rpb24gdGFrZXMgYSBnaXZlbiB2ZWN0b3IgYW5kIGNoZWNrcyBpdCB0byBzZWUgaWYgdGhlcmUgYXJlIGFueSBvdXRsaWVycyBpbiB0aGUgdmVjdG9yCiMnIEBwYXJhbSB2IGlzIHRoZSB2ZWN0b3Igb2YgbnVtYmVycyB0byBydW4gdGhyb3VnaCB0aGUgZnVuY3Rpb24KIycgQHJldHVybnMgYSBib29sZWFuIHZlY3RvciB0aGF0IHRlbGxzIHVzIGlmIHRoZSB2YWx1ZXMgaW4gdGhlIHZlY3RvciBhcmUgb3V0bGllcnMgb3Igbm90IAoKdHVrZXkub3V0bGllciA8LSBmdW5jdGlvbih2KXsKICBvdXRsaWVyIDwtIHZlY3RvcihsZW5ndGggPSBsZW5ndGgodikpCiAgZm9yKGkgaW4gMTpsZW5ndGgodikpewogICAgaWYodltpXSA8IFExLTEuNSpJUVIgfCB2W2ldID4gUTMrMS41KklRUil7CiAgICAgIG91dGxpZXJbaV0gPC0gVFJVRQogICAgfWVsc2V7CiAgICAgIG91dGxpZXJbaV0gPC0gRkFMU0UKICAgIH0KICB9CiAgcmV0dXJuKG91dGxpZXIpCn0KeAp0dWtleS5vdXRsaWVyKHgpCmBgYAoKIyMgUHJvYmxlbSA1IAoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCg==</div>
 
 
 
